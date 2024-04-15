@@ -7,7 +7,9 @@
 
     {{--
     <x-theme-header.menu></x-theme-header.menu>
-
-    <x-theme-header.profile></x-theme-header.profile>
     --}}
+
+    @theme("header/profile")
+    {{-- <x-theme-header.profile></x-theme-header.profile> --}}
+
 </nav>

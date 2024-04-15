@@ -13,8 +13,8 @@
         </title>
 
 
-        {{-- <link rel="stylesheet" href="https://jinyphp.github.io/css/assets/css/app.css"> --}}
-        @vite('resources/scss/jiny.scss')
+        <link rel="stylesheet" href="https://jinyphp.github.io/css/assets/css/app.css">
+        {{-- @vite('resources/scss/jiny.scss') --}}
 
         @stack('css')
 
@@ -40,13 +40,19 @@
 
         <script src="https://jinyphp.github.io/css/assets/js/app.js" defer></script>
         @stack('scripts')
+        {{-- @livewireScripts --}}
+        <script>
+            // Livewire
+            document.addEventListener('livewire:load', function () {
+                Livewire.on('reloadPage', () => {
+                    location.reload();
+                    console.log("reloadPage");
+                });
+            });
+        </script>
 
         <!-- Include the Quill library -->
         {{-- <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-
-
-
     </body>
 </html>
